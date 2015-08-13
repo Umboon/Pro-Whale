@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html ng-app="student">
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="js/jquery-1.11.3.min (1).js"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/student.js"></script>
+        <script src="js/jquery-custom-growl.js"></script>
+
+        <!-- BootStap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </head>
+    <body ng_controller="studentController">
+        <div>
+            <label>UserName : </label>
+            <input ng-model="student.userName">
+        </div>
+        <div>
+            <label>Password : </label>
+            <input ng-model="student.password">
+        </div>
+        <div>
+            <label>Email : </label>
+            <input ng-model="student.email">
+        </div>
+        <div>
+            <input type="submit" value="Save" ng-click="saveStudent()">
+        </div>
+
+        <!--,-----------------------------------------------------------------------<!--,-->
+        <h1>Delete</h1>
+        <div>
+            <label>Delete ID:</label>
+            <input ng-model="delStudent.id">
+            <input type="submit" value="Delete" ng-click="deleteStudent()">
+        </div>
+
+        <!--,-----------------------------------------------------------------------<!--,-->
+        <br>
+        <br>
+
+        <table>
+            <tr>
+                <td>ID</td>
+                <td>NAME</td>
+                <td>PassWord</td>
+                <td>Email</td>
+            </tr>
+            <tr ng-repeat="stu in students.content">
+                <td>{{stu.id}}</td>
+                <td>{{stu.userName}}</td>
+                <td>{{stu.password}}</td>
+                <td>{{stu.email}}</td>
+                <td><input type="submit" value="Update" ng-click="clickUpdate(stu)"></td>
+            </tr>
+        </table>
+
+
+
+
+        <div id="growl-custom"></div>
+        <style>
+            #growl-custom{
+                display: none;
+                position: absolute;
+                z-index: 1000;
+                padding: 15px 20px;
+                border-radius: 10px;
+            }
+            td{
+                border: 1px solid blueviolet;
+                width: 100px;
+            }
+        </style>
+
+        <form action="pages/user.html">
+            <input type="submit" value="Go User">
+        </form>
+        <form action="pages/show_user.html">
+            <input type="submit" value=" Show_User">
+        </form>
+
+
+
+    </body>
+</html>

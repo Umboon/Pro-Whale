@@ -1,0 +1,49 @@
+
+<html ng-app="user">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="../bootstrap-3.3.5-dist/css/bootstrap.min.css">
+        <script src="../js/jquery-1.11.3.min (1).js"></script>
+        <script src="../js/angular.min.js"></script>
+        <script src="../js/checklist-model.js"></script>
+        <script src="../js/jquery-custom-growl.js"></script>
+        <script src="../js/user.js"></script>
+        <script src="../bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    </head>
+    <body ng-controller="userController">
+        <table>
+            <tr>
+                <td>ID</td>
+                <td>NAME</td>
+                <td>E-Mail</td>
+                <td>STATUS</td>
+            </tr>
+            <tr ng-repeat="sur in users.content">
+                <td>{{sur.id}}</td>
+                 <td>{{sur.name}}</td>
+                  <td>{{sur.email}}</td>
+                   <td>{{sur.status}}</td>
+            </tr>
+        </table>
+    </body>
+    
+    
+    
+    
+    <style>
+        
+        
+        
+         td{
+                border: 1px solid blue;
+                width: 100px;
+            }
+    </style>
+    
+    
+    
+    
+</html>

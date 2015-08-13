@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="user">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="../bootstrap-3.3.5-dist/css/bootstrap.min.css">
+        
+        <script src="../js/jquery-1.11.3.min (1).js"></script>
+        <script src="../bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+        <script src="../js/angular.min.js"></script>
+        <script src="../js/jquery-custom-growl.js"></script>
+        <script src="../js/user.js"></script>
+        <script src="../js/checklist-model.js"></script>
+        
+        
+    </head>
+    <body ng-controller="userController">
+        <h1> Authority </h1>
+        <div>
+            <label>Name : </label>
+            <input ng-model="user.name">
+        </div>
+        <div>
+            <label>PassWord : </label>
+            <input ng-model="user.passWord">
+        </div>
+        <div>
+            <label>E-mail : </label>
+            <input ng-model="user.email">
+        </div>    
+        <div>
+             <label>Status : </label>
+             <select ng-model="user.status">
+                 <option value="Admin">Admin</option>
+                 <option value="Teachet">Teacher</option>
+                 <option value="Student">Student</option>
+             </select>
+        </div>    
+        <div>
+             <label>Role : </label>
+             <div ng-repeat="atr in authority.content">
+                 <input type="checkbox" checklist-model="user.authoritys" checklist-value="atr">{{atr.role}}
+                 
+             </div>
+        </div>  
+        
+        <div>
+            <form action="show_user.html"> <input type="submit" value="Save" ng-click="saveUser()"></form>
+        </div>   
+            
+        
+       
+    </body>
+</html>
